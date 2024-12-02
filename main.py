@@ -52,7 +52,7 @@ def create_db_connection(host_name, user_name, user_password, db_name):
     return connection
 
 
-connection = create_db_connection("localhost", "root", "Comber00.", 'MichiganSchools')
+connection = create_db_connection("localhost", "root", "password", 'MichiganSchools')
 
 
 def extract() -> dict:
@@ -75,7 +75,7 @@ def transform(data: dict) -> pd.DataFrame:
 
 def load(df: pd.DataFrame) -> None:
     # loads data into mysql database
-    engine = create_engine("mysql+mysqlconnector://root:Comber00.@localhost/michiganschools")
+    engine = create_engine("mysql+mysqlconnector://root:password@localhost/michiganschools")
     df.to_sql('mi_uni', engine, if_exists='replace')
 
 
