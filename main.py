@@ -20,7 +20,7 @@ def create_server_connection(host_name, user_name, user_password):
     return connection
 
 
-connection = create_server_connection("localhost", "root", "Comber00.")
+connection = create_server_connection("localhost", "root", "password")
 
 
 def create_database(connection, query):
